@@ -1,0 +1,259 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #ec939f;
+  overflow: hidden;
+}
+
+#cake {
+  display: block;
+  position: relative;
+  margin: -10.5em auto 0 auto;
+  scale: 1.1;
+}
+
+#cake {
+  z-index: 1;
+}
+
+/* ============================================== Candle
+*/
+.candle {
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 210px;
+  left: 50%;
+  margin-left: -2.4px;
+  margin-top: -8.33333333px;
+  width: 13px;
+  height: 65px;
+  transform: translateY(-300px);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation: in 500ms 6s ease-out forwards;
+          animation: in 500ms 6s ease-out forwards;
+}
+
+.candle:after,
+.candle:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
+
+.candle:after {
+  top: 25%;
+  left: 0;
+}
+
+.candle:before {
+  top: 45%;
+  left: 0;
+}
+
+/* ============================================== Fire
+*/
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -25px;
+  left: 39%;
+  margin-left: -2.6px;
+  width: 8.66666667px;
+  height: 26px;
+}
+
+.fuego:nth-child(1) {
+  -webkit-animation: fuego 2s 6.5s infinite;
+          animation: fuego 2s 6.5s infinite;
+}
+
+.fuego:nth-child(2) {
+  -webkit-animation: fuego 1.5s 6.5s infinite;
+          animation: fuego 1.5s 6.5s infinite;
+}
+
+.fuego:nth-child(3) {
+  -webkit-animation: fuego 1s 6.5s infinite;
+          animation: fuego 1s 6.5s infinite;
+}
+
+.fuego:nth-child(4) {
+  -webkit-animation: fuego 0.5s 6.5s infinite;
+          animation: fuego 0.5s 6.5s infinite;
+}
+
+.fuego:nth-child(5) {
+  -webkit-animation: fuego 0.2s 6.5s infinite;
+          animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire
+*/
+@-webkit-keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+@-webkit-keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+.text {
+  opacity: 0;
+  color: #8b6a60;
+  font-family: "Courier New", monospace;
+  font-style: italic;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 25px;
+  font-size: clamp(1.5rem, 6vw, 2.1em);
+}
+
+.text span {
+  opacity: 0;
+  animation: revealChar 0.1s ease-in forwards;
+}
+.text h1 {
+  font-size: 1.4em;
+}
+
+/* ============================================== Hearts
+*/
+.hearts {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  color: #ff6b9d;
+  font-size: 1.5em;
+  z-index: -1;
+}
+
+.heart.white {
+  color: #ffffff;
+  animation: fall-white 10s linear infinite;
+}
+
+.heart.red {
+  color: #ff6b9d;
+  opacity: 1;
+  animation: fall-red 10s linear infinite;
+}
+
+@keyframes fall-white {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  60%{
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+@keyframes fall-red {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60%{
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes revealChar {
+  to {
+    opacity: 1;
+  
+  }
+}
+
+/* Centered SVG image for the cake */
+.cake-image {
+  display: block;
+  pointer-events: none;
+}
+
+.cake-image-circle {
+  pointer-events: none;
+}
+
+/* container for cake + text to position overlay image */
+.scene {
+  width: 200px;
+  margin: -10.5em auto 0 auto;
+  position: relative;
+}
+
+.overlay-image {
+  position: absolute;
+  left: 50%;
+  top: 270px; /* adjust to sit over the 'NA' text */
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
+.text-container {
+  position: relative;
+  z-index: 3;
+}
